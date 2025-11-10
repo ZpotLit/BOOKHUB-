@@ -82,6 +82,7 @@ footer { text-align:center; padding:20px; background: var(--header-bg); color:#f
   <button id="themeToggle">Dark Mode</button>
 </header>
 
+<!-- CORRECT HUD NAVIGATION -->
 <nav>
   <a href="#artificial-intelligence">Artificial Intelligence</a>
   <a href="#technology">Technology</a>
@@ -91,7 +92,7 @@ footer { text-align:center; padding:20px; background: var(--header-bg); color:#f
   <a href="#sports">Sports</a>
   <a href="#entertainment">Entertainment</a>
   <a href="#culture">Culture</a>
-  <a href="#parental-mentorship">Parental Role & Mentorship</a>
+  <a href="#parental-role-mentorship">Parental Role & Mentorship</a>
   <a href="#romance">Romance</a>
   <a href="#sex-life">Sex Life</a>
   <a href="#business-finance">Business & Finance</a>
@@ -106,6 +107,7 @@ footer { text-align:center; padding:20px; background: var(--header-bg); color:#f
 </nav>
 
 <div class="container">
+
 
 <!-- Section: Artificial Intelligence -->
 <div class="section" id="artificial-intelligence">
@@ -3332,36 +3334,21 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
-
-</body>
-</html> <!-- SPACE FOR 20 SECTIONS -->
-  <!-- Paste each of your 20 sections here using IDs corresponding to the HUD -->
-</div>
-
-<!-- SPACE FOR ADSENSE SCRIPT -->
-
-<footer>
-  <p>&copy; 2025 BOOKHUB. All rights reserved.</p>
-</footer>
-
-<!-- VISIBLE COOKIES BANNER -->
-<div class="cookies-banner">
-  <p>This site uses cookies to enhance your browsing experience. By continuing to use BOOKHUB, you agree to our use of cookies.</p>
+<!-- VISIBLE GOOGLE-STYLE COOKIES BANNER -->
+<div id="cookiesBanner" class="cookies-banner">
+  <p>This site uses cookies to ensure you get the best experience on BOOKHUB. By using our site, you agree to our use of cookies.</p>
+  <button id="acceptCookies" style="margin-left:15px;padding:5px 12px;border:none;border-radius:4px;background:#1a73e8;color:#fff;cursor:pointer;">Got it!</button>
 </div>
 
 <script>
-// Dark mode toggle
-const toggle = document.getElementById('themeToggle');
-toggle.addEventListener('click', () => {
-  if(document.body.dataset.theme === 'light'){
-    document.body.dataset.theme = 'dark';
-    toggle.textContent = 'Light Mode';
-  } else {
-    document.body.dataset.theme = 'light';
-    toggle.textContent = 'Dark Mode';
-  }
+// Cookies acceptance logic
+const cookiesBanner = document.getElementById('cookiesBanner');
+const acceptCookies = document.getElementById('acceptCookies');
+
+acceptCookies.addEventListener('click', () => {
+  cookiesBanner.style.display = 'none';
+  // Optionally set a cookie to remember user acceptance
+  document.cookie = "bookhub_cookies_accepted=true; path=/; max-age=" + 60*60*24*365;
 });
 </script>
-
-</body>
-</html>
+</body><!--
